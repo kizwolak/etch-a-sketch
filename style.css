@@ -1,21 +1,29 @@
 .box {
-    width: 100px;
-    height: 100px;
+    width: 50%;
+    padding-bottom: 50%;
     border: 2px solid black;    
 }
 
 .container {
-    display:grid;
-    grid-template-columns: repeat(16, 1fr);
+    display: grid;
+    grid-template-columns: repeat(64, auto);
     grid-gap: 1em;
+    width: 1280px;
+    height: auto;
+    padding-bottom: 10em;
 }
 
 .row {
-    width: 100%;
     display:grid;
-    grid-gap: 1em;
+    grid-row-gap: 1em;
 }
 
 .newbox {
     background-color: black;
+}
+
+#button {
+    height: 200px;
+    width: 200px;
+    position: absolute;
 }
