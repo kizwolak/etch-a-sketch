@@ -13,10 +13,6 @@ function ask() {
     }
 }
 
-let isMouseDown = false;
-window.onmousedown = () => (isMouseDown = true);
-window.onmouseup = () => (isMouseDown = false);
-
 let squares = 50;
 
 const container = document.querySelector(".container")
@@ -31,10 +27,10 @@ function draw() {
                 box.className = "box";
                 row.appendChild(box);
                 function colour() {
-                    window.onmousedown = () => (isMouseDown = true);
-                    if (isMouseDown) {
-                        box.classList.add('newbox');                       
-                    }
+                        let randomColour = Math.floor(Math.random()*16777215).toString(16);
+                        box.style.backgroundColor = "#" + randomColour;
+                        box.classList.add("opacity");
+   
                 }
                 box.addEventListener('mouseover', colour);
             }
@@ -48,7 +44,7 @@ let reset = document.querySelector("#reset");
 
 function clear() {
     allBoxes.forEach(box => {
-        box.classList.remove('newbox');
+        box.style.backgroundColor = "white";
     });
 }
 
@@ -93,7 +89,7 @@ function deleteDraw() {
 
     function clear() {
     allBoxes.forEach(box => {
-        box.classList.remove('newbox');
+        box.style.backgroundColor = "white";
     });  
     }   
 
