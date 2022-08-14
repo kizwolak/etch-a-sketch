@@ -13,6 +13,10 @@ function ask() {
     }
 }
 
+let isMouseDown = false;
+window.onmousedown = () => (isMouseDown = true);
+window.onmouseup = () => (isMouseDown = false);
+
 let squares = 50;
 
 const container = document.querySelector(".container")
@@ -27,9 +31,12 @@ function draw() {
                 box.className = "box";
                 row.appendChild(box);
                 function colour() {
-                    box.classList.add('newbox');
+                    window.onmousedown = () => (isMouseDown = true);
+                    if (isMouseDown) {
+                        box.classList.add('newbox');                       
+                    }
                 }
-                box.addEventListener('mousedown', colour);
+                box.addEventListener('mouseover', colour);
             }
         document.querySelector(".container").appendChild(row);
     }
