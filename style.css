@@ -1,22 +1,15 @@
 .box {
-    width: 50%;
-    padding-bottom: 50%;
-    border: 2px solid black;    
+    border: 2px solid black;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(64, auto);
-    grid-gap: 1em;
-    width: 1280px;
-    height: auto;
-    padding-bottom: 10em;
+    grid-template-columns: repeat(100, auto);
+    width: 1024px;
+    height: 768px;
+    margin-bottom: 3em;
 }
 
-.row {
-    display:grid;
-    grid-row-gap: 1em;
-}
 
 .newbox {
     background-color: black;
@@ -25,5 +18,15 @@
 #button {
     height: 200px;
     width: 200px;
-    position: absolute;
+}
+
+.row {
+    display:grid;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
